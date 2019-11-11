@@ -10,20 +10,19 @@
 	<p>Find prime numbers between:</p>
 	<input type="number" name="" placeholder="From..">
 	<p>and:</p>
-	<input type="number" name="" placeholder="To..">
-	<textarea rows="2" placeholder="Result"></textarea>
+	<input type="numbers" name="" placeholder="To..">
+	<textarea rows="5" placeholder="Result"></textarea>
 	<button type="button" onclick="clr();">Clear</button>
 	<button type="button" onclick="findPrime();">Submit</button>
 
 	<script type="">
 		function findPrime(){
-			var startingPoint = document.getElementsByTagName("input")[0].value;
-			var endingPoint = document.getElementsByTagName("input")[1].value;
+			var startingPoint = Number(document.getElementsByTagName("input")[0].value);
+			var endingPoint = Number(document.getElementsByTagName("input")[1].value);
 			var arr = []
-
 			for(i=startingPoint; i<= endingPoint ; i++){
 				var flag = 0;
-				for(j = 2 ; j<= i/2 ;j++){
+				for(j = 2 ; j<= Math.sqrt(i)/2 ;j++){
 					if(i%j == 0){
 						flag = 1;
 					}
@@ -39,7 +38,7 @@
 		function clr(){
 			document.getElementsByTagName("input")[0].value = "";
 			document.getElementsByTagName("input")[1].value = "";
-			document.getElementsByTagName("input")[2].value = "";
+			document.getElementsByTagName("textarea")[0].value = "";
 
 		}
 	</script>
