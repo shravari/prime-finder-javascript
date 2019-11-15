@@ -1,0 +1,36 @@
+body{
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+}
+h1{
+	color: #73139F;
+	margin-top: 100px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	letter-spacing: 2px;
+	text-shadow: 1px 1px 1px #67357E;
+}
+h3{
+	margin-top: 0px;
+}
+p{
+	margin-top: 40px;
+}
+input{
+	margin: 30px;
+	margin-top: 0px;
+	height: 30px;
+	width: 100px;
+	text-align: center;
+}
+input::placeholder,textarea::placeholder{
+	color: #73139F;
+}
+button{
+	margin: 30px;
+	padding: 10px 20px;
+	border:none;
+	background-color: #67357E;
+	color: white;
+	box-shadow: 2px 2px 2px #421556;
+}

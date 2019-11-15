@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Prime Numbers</title>
+	<link rel="stylesheet" type="text/css" href="prime.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 	<h1>Prime Number Finder</h1>
@@ -9,9 +11,11 @@
 
 	<p>Find prime numbers between:</p>
 	<input type="number" name="" placeholder="From..">
-	<p>and:</p>
+	<span>and:</span>
 	<input type="numbers" name="" placeholder="To..">
-	<textarea rows="5" placeholder="Result"></textarea>
+	<br>
+	<textarea rows="5" placeholder="Result.."></textarea>
+	<br>
 	<button type="button" onclick="clr();">Clear</button>
 	<button type="button" onclick="findPrime();">Submit</button>
 
@@ -20,18 +24,22 @@
 			var startingPoint = Number(document.getElementsByTagName("input")[0].value);
 			var endingPoint = Number(document.getElementsByTagName("input")[1].value);
 			var arr = []
-			for(i=startingPoint; i<= endingPoint ; i++){
-				var flag = 0;
-				for(j = 2 ; j<= Math.sqrt(i)/2 ;j++){
-					if(i%j == 0){
-						flag = 1;
+			if (startingPoint == 0 && endingPoint == 0){
+				alert("Please enter a range");
+			}
+			else{
+				for(i=startingPoint; i<= endingPoint ; i++){
+					var flag = 0;
+					for(j = 2 ; j<= Math.sqrt(i) ;j++){
+						if(i%j == 0){
+							flag = 1;
+						}
+					}
+					if (flag == 0){
+						arr.push(i);
 					}
 				}
-				if (flag == 0){
-					arr.push(i);
-				}
 			}
-
 			document.getElementsByTagName("textarea")[0].value = arr;
 		}
 
