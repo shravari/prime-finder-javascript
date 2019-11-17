@@ -27,6 +27,9 @@
 			if (startingPoint == 0 && endingPoint == 0){
 				alert("Please enter a range");
 			}
+			else if(startingPoint>endingPoint){
+				alert("Please enter a valid range");
+			}
 			else{
 				for(i=startingPoint; i<= endingPoint ; i++){
 					var flag = 0;
